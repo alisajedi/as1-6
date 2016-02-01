@@ -1,5 +1,6 @@
 package com.example.erin.elmacdon_fueltrack;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -31,11 +32,11 @@ import java.io.OutputStreamWriter;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCombatActivity {
     // Opens a main page with two buttons (NEW LOG ENTRY and VIEW LOG ENTRIES) which, when clicked,
     // open EntryPage and LogEntries respectively
 
-    protected ArrayList<Entry> entries = new ArrayList<>();
+    protected ArrayList<Entry> entries = new ArrayList<Entry>();
     protected ArrayAdapter<Entry> adapter;
     // totalCost is the amount of money spent on fuel, udpated throughout the program. Position is
     // used when a log entry is clicked to know which entry in the ArrayList to access
@@ -48,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        totalCost = getFuelCost();
 
         // totalCost is either initialized to 0 (see getFuelCost()) or the float in the file
         Button newEntryButton = (Button) findViewById(R.id.newEntry);

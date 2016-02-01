@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.erin.elmacdon_fueltrack.EntryPage"
+    tools:showIn="@layout/activity_entry_page">
+
+    <EditText android:id="@+id/date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="date"
+        android:ems="10"
+        android:hint="Date (yyyy-mm-dd)"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText android:id="@+id/station"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Station"
+        android:layout_below="@+id/date"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText android:id="@+id/odometer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:hint="Odometer Reading (km)"
+        android:layout_below="@+id/station"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText android:id="@+id/grade"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Grade"
+        android:layout_below="@+id/odometer"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText android:id="@+id/amount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:hint="Amount (L)"
+        android:layout_below="@+id/grade"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText android:id="@+id/costPerL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:hint="Price (cents/L)"
+        android:layout_below="@+id/amount"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button android:id="@+id/save"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="DONE"
+        android:layout_below="@+id/costPerL"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button android:id="@+id/cancel"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="CANCEL"
+        android:layout_alignBaseline="@+id/save"
+        android:layout_alignBottom="@+id/save"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:onClick="MainActivity"/>
+
+</RelativeLayout>
